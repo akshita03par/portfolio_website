@@ -3,81 +3,177 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Akshita Parmar</title>
-    <link rel="stylesheet" href="./output.css" />
+    <title>PORTFOLIO WEBSITE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-    <link rel="icon" type="image/png" href="./images/Akshita-Favicon.jpg" />
     <style>
-      html,
-      body {
-        overflow-x: hidden;
-        font-family: "Lato", sans-serif;
+      <style>
+      .btn-pink {
+        @apply bg-orange-500 text-white px-9 py-3 text-sm font-medium border-4 border-transparent relative z-[1] transition-all duration-500 shadow-md;
       }
+      .btn-pink::before {
+        content: "";
+        @apply absolute bg-white top-0 left-0 right-0 bottom-0 scale-x-0 origin-left transition-all duration-[800ms] z-[-1];
+      }
+      .btn-pink:hover::before {
+        transform: scaleX(1);
+      }
+      .btn-pink:hover {
+        @apply text-black border-orange-500;
+      }
+      .user-image {
+        @apply p-10 grayscale transition-all duration-[1000ms] animate-[scaleImage_5s_linear_infinite];
+      }
+      
     </style>
   </head>
 
-  <body>
-    <div class="overflow-x-hidden relative w-full">
-      <!-- navbar -->
+  <body
+    class="overflow-x-hidden h-screen bg-cover bg-center bg-no-repeat"
+    style="background-image: url('./images/background-img2.jpg')"
+  >
+    <div id="wrapper" class="overflow-y-auto h-screen">
 
-      <section
-        class="bg-[url(./images/background-img2.jpg)] bg-no-repeat bg-cover h-screen overflow-y-auto"
-      >
-        <nav class="relative">
-          <div
-            class="relative w-[1100px] mx-auto flex items-center justify-evenly"
-          >
-            <!-- logo -->
+      <div class="container mx-auto max-w-[1200px]">
 
-            <div class="flex items-center justify-start">
-              <img src="./images/A_letter_Image.png" class="w-[70px]" />
+        <div class="navbar flex justify-between items-center pt-4">
 
-              <div class="-ml-3 text-[30px]">kshita Parmar</div>
-            </div>
-
-            <!-- nav-items -->
-
-            <div class="flex gap-8 p-2">
-              <div
-                class="text-[20px] font-lato font-medium cursor-pointer hover:font-bold transition duration-700"
-              >
-                <a href="#projects" class="text-black no-underline">Projects</a>
-              </div>
-              <div
-                class="text-[20px] font-lato font-medium cursor-pointer hover:font-bold transition duration-700"
-              >
-                <a href="#skills" class="text-black no-underline">Skills</a>
-              </div>
-              <div
-                class="text-[20px] font-lato font-medium cursor-pointer hover:font-bold transition duration-700"
-              >
-                <a href="#contactme" class="text-black no-underline"
-                  >Contact me</a
-                >
-              </div>
-            </div>
+          <div class="logo-container flex items-center justify-start">
+            <img
+              src="./images/A_letter_Image.png"
+              class="w-[70px]"
+            />
+            <div class="ml-[-0.5rem] text-[30px]">kshita Parmar</div>
           </div>
-        </nav>
-      </section>
 
-      <!-- hero-section -->
-
-      <section class="">
-
-        <div>
-
-          <!-- hero-section-left -->
-
-          <div>
-
-
+          <div class="nav-items flex gap-8 p-2 text-[20px] font-medium">
+            <div>
+              <a
+                href="#projects"
+                class="text-black hover:font-bold transition duration-700"
+                >Projects</a
+              >
+            </div>
+            <div>
+              <a
+                href="#skills"
+                class="text-black hover:font-bold transition duration-700"
+                >Skills</a
+              >
+            </div>
+            <div>
+              <a
+                href="#contactme"
+                class="text-black hover:font-bold transition duration-700"
+                >Contact me</a
+              >
+            </div>
           </div>
         </div>
-      </section>
+
+        <!-- Hero Section -->
+        <div
+          class="hero-section relative flex justify-center items-center gap-8 my-16 px-4 pb-32"
+        >
+          <div
+            class="absolute select-none text-[7em] font-bold text-[#e7e7e7] bottom-[-19%] left-[-5%] transition-all duration-[3000ms]"
+          >
+            Akshita Parmar
+          </div>
+
+          <!-- Left -->
+          <div class="hero-section-left flex flex-col justify-center gap-8">
+
+            <div class="text-[35px] text-[#343d68] font-medium">
+              hi!! Akshita Parmar
+            </div>
+
+            <div class="text-[45px] leading-[45px] font-medium">
+              I am a <span class="role text-[#4e45d5] font-extrabold"></span>
+            </div>
+
+            <div class="mt-4 w-[70%] font-medium">
+              i'm a software developer and here is my portfolio website. Here
+              you'll learn about my journey as a software developer.
+            </div>
+
+            <div class="btn-pink">Hire me</div>
+
+          </div>
+
+          <!-- Right -->
+          <div class="hero-section-right relative">
+
+            <div
+              class="absolute bottom-[-1rem] right-0 animate-[dotsAnimation_5s_infinite] z-10"
+            >
+              <img src="./6_Portfolio_website_Images/icon-dots.png" alt="" />
+            </div>
+
+            <div
+              class="absolute top-[-0.8em] right-[1em] animate-[cubeRotate_3s_infinite] z-10"
+            >
+              <img src="./6_Portfolio_website_Images/icon-cube.png" alt="" />
+            </div>
+            <div
+              class="absolute bottom-0 left-0 animate-[shakeEffect_6s_linear_infinite] z-10"
+            >
+              <img src="./6_Portfolio_website_Images/icon-circle.png" alt="" />
+            </div>
+            <div
+              class="absolute top-[0.5em] left-[-1em] animate-[zigzagAnimation_5s_ease-in_infinite] z-10"
+            >
+              <img src="./6_Portfolio_website_Images/icon-zigzag.png" alt="" />
+            </div>
+            <div
+              class="absolute top-[-0.8em] left-[45%] animate-[shakeEffectplus_5s_ease-in_infinite] z-10"
+            >
+              <img src="./6_Portfolio_website_Images/icon-plus.png" alt="" />
+            </div>
+
+            <!-- Akshita-img -->
+
+            <div class="user-image animate-[zoomInOut_5s_linear_infinite] grayscale p-10">
+              <img
+                src="./images/Akshita.jpg"
+                alt=""
+                loading="lazy"
+                class="w-[15em]"
+              />
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
     </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script
+      src="https://kit.fontawesome.com/58a810656e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var typeData = new Typed(".role", {
+        strings: [
+          "Full Stack Developer",
+          "Web Developer",
+          "UI-UX Designer",
+          "Backend Developer",
+          "Coder",
+        ],
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 80,
+        backDelay: 1000,
+      });
+    </script>
   </body>
 </html>
-find mistake
