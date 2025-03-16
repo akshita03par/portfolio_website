@@ -12,6 +12,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
 
   <body class="overflow-x-hidden">
@@ -148,7 +153,7 @@
         "
       >
         <!-- design image placed behind cards  -->
-         
+
         <img
           src="./images/dots-image-removebg-preview.png"
           alt="dots background"
@@ -295,22 +300,25 @@
 
       <!-- project-section -->
 
-      <div class="relative overflow-hidden">
+      <div class="relative overflow-hidden bg-white mt-1.5">
         <!-- Top Tilt -->
-        <!-- <div class="absolute top-0 left-0 w-full h-32 bg-white transform -skew-y-6 origin-top-left"></div> -->
+        <div
+          class="absolute top-0 left-0 w-full h-32 bg-white transform -skew-y-6 origin-top-left z-20"
+        ></div>
 
         <!-- Slanted Background -->
         <div
-          class="absolute inset-0 bg-[#fde4dc] transform -skew-y-6 origin-top-left"
+          class="absolute inset-0 bg-[#fde4dc] transform -skew-y-6 origin-top-left min-h-[1800px] lg:min-h-[1600px] z-0"
         ></div>
 
         <!-- Content Above Background -->
-        <div class="relative z-10 px-4 py-20">
+        <div class="relative z-10 px-4 pb-10 pt-32">
           <div class="text-center">
             <h3 class="text-4xl text-[#5e6472] font-bold mb-5">
               Recent <span class="text-[#f06b6b]">Projects</span>
             </h3>
-            <p class="mb-6 md:w-3/4 md:px-12 mx-auto text-[#5e6472]">
+
+            <p class="mb-4 md:w-3/4 md:px-12 mx-auto text-[#5e6472] text-lg">
               I bring a passion for creating user-friendly experiences and a
               drive for design trends and technologies to deliver top-notch
               designs that meet and exceed expectations.
@@ -318,9 +326,94 @@
           </div>
         </div>
 
+        <!-- Swiper Start -->
+        <div class="relative z-10 pb-20 mb-10 px-4">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+
+              <div class="swiper-slide">
+                <div
+                  class="w-10/12 max-w-[1080px] flex flex-col lg:flex-row justify-between items-center mx-auto gap-10"
+                >
+                  <div class="space-y-6 max-w-xl">
+                    <h2 class="font-bold text-[36px] text-[#dd4444]">
+                      GYM FITNESS WEBSITE
+                    </h2>
+
+                    <div class="w-6 h-1 bg-[#5e6472]"></div>
+
+                    <p class="text-[16px] leading-6 text-[#5e6472] opacity-70">
+                      A modern and responsive gym fitness website designed to
+                      help users calculate BMI, explore workout plans, and
+                      choose personalized fitness goals. The site features
+                      interactive tools, service sections, pricing plans, and a
+                      user-friendly interface.
+                    </p>
+
+                    <div
+                      class="text-sm font-semibold text-[#5e6472] z-50 relative"
+                    >
+                      HTML, CSS, JavaScript
+                    </div>
+                  </div>
+
+                  <div class="relative z-30">
+                    <img
+                      src="./images/gym-fitness-img.png"
+                      alt="Gym Fitness Website"
+                      class="w-full max-w-[580px] rounded-lg shadow-md"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <div
+                  class="w-10/12 max-w-[1080px] flex flex-col lg:flex-row justify-between items-center mx-auto gap-10"
+                >
+                  <div class="space-y-6 max-w-xl">
+                    <h2 class="font-bold text-[36px] text-[#dd4444]">
+                      RAZORPAY CLONE
+                    </h2>
+
+                    <div class="w-6 h-1 bg-[#5e6472]"></div>
+
+                    <p class="text-[16px] leading-6 text-[#5e6472] opacity-70">
+                      A Razorpay clone homepage created using HTML, CSS and
+                      JavaScript. Modern layout, mobile responsiveness, and
+                      clean UI interactions.
+                    </p>
+
+                    <div class="text-sm font-semibold text-gray-600">
+                      HTML, Tailwind CSS
+                    </div>
+                  </div>
+
+                  <div class="relative z-30">
+                    <img
+                      src="./images/razorpay-img.png"
+                      alt="Razorpay Clone"
+                      class="w-full max-w-[580px] rounded-lg shadow-md"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Arrows -->
+            <div class="swiper-button-next text-[#5e6472]"></div>
+            <div class="swiper-button-prev text-[#5e6472]"></div>
+
+            <!-- Dots -->
+            <div class="swiper-pagination !bottom-0"></div>
+          </div>
+        </div>
+
         <!-- Bottom Tilt -->
         <div
-          class="absolute bottom-0 left-0 w-full h-32 bg-white transform skew-y-6 origin-bottom-left"
+          class="absolute bottom-0 left-0 w-full h-32 bg-white transform skew-y-6 origin-bottom-left z-20"
         ></div>
       </div>
     </div>
@@ -331,24 +424,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <script>
-      // Typed text animation
-
-      var typeData = new Typed(".role", {
-        strings: [
-          "Full Stack Developer",
-          "Web Developer",
-          "UI-UX Designer",
-          "Backend Developer",
-          "Coder",
-        ],
-        loop: true,
-        typeSpeed: 100,
-        backSpeed: 80,
-        backDelay: 1000,
-      });
-    </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>
