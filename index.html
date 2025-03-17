@@ -19,6 +19,10 @@
     />
 
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
       @keyframes floatUp {
         0% {
           transform: translateY(0);
@@ -31,9 +35,24 @@
         }
       }
 
+      .clip-tilted {
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0% 100%);
+      }
+
+      @media (min-width: 768px) {
+        .clip-tilted {
+          clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0% 100%);
+        }
+      }
+
       .skill-logo {
         animation: floatUp 3s ease-in-out infinite;
         transition: transform 0.3s;
+        filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
+      }
+
+      .skill-logo:hover {
+        transform: translateY(-15px) scale(1.05);
       }
     </style>
   </head>
@@ -62,15 +81,23 @@
 
             <div class="hidden md:flex gap-8 p-2 text-[20px] font-medium">
               <a
-                href="#projects"
+                href="#Services"
                 class="text-black hover:font-bold transition duration-700"
-                >Projects</a
+                >Services</a
               >
+
               <a
                 href="#skills"
                 class="text-black hover:font-bold transition duration-700"
                 >Skills</a
               >
+
+              <a
+                href="#projects"
+                class="text-black hover:font-bold transition duration-700"
+                >Projects</a
+              >
+
               <a
                 href="#contactme"
                 class="text-black hover:font-bold transition duration-700"
@@ -93,15 +120,21 @@
               class="hidden w-full mt-4 flex flex-col gap-4 md:hidden text-[18px] font-medium bg-white p-4 rounded shadow"
             >
               <a
-                href="#projects"
+                href="#Services"
                 class="text-black hover:font-bold transition duration-700"
-                >Projects</a
+                >Services</a
               >
               <a
                 href="#skills"
                 class="text-black hover:font-bold transition duration-700"
                 >Skills</a
               >
+              <a
+                href="#projects"
+                class="text-black hover:font-bold transition duration-700"
+                >Projects</a
+              >
+
               <a
                 href="#contactme"
                 class="text-black hover:font-bold transition duration-700"
@@ -115,7 +148,7 @@
             class="relative flex flex-col md:flex-row justify-center items-center gap-8 my-16 px-4 pb-32"
           >
             <div
-              class="absolute select-none text-[3em] md:text-[7em] font-bold text-[#979dac] bottom-[-12%] left-[-5%] transition-all duration-[3000ms]"
+              class="absolute select-none text-[3em] md:text-[7em] font-bold text-[#979dac] bottom-[-10%] left-[-1%] transition-all duration-[3000ms]"
             >
               Akshita Parmar
             </div>
@@ -170,6 +203,7 @@
           background-image: url('./images/background-imgg.jpg');
           background-size: cover;
         "
+        id="Services"
       >
         <!-- design image placed behind cards  -->
 
@@ -206,7 +240,7 @@
             <img
               src="./images/services-card1.png"
               alt="service-card1"
-              class="w-14 h-14 mb-6"
+              class="w-18 h-16 mb-6"
             />
             <h3 class="text-xl font-bold mb-4 text-[#1f2937]">Web Developer</h3>
             <p class="text-gray-600 leading-relaxed mb-4">
@@ -242,14 +276,14 @@
             class="bg-white shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 p-6 cursor-pointer"
           >
             <img
-              src="./images/services-card1.png"
+              src="./images/java-service.png"
               alt="service-card2"
-              class="w-14 h-14 mb-6"
+              class="w-20 h-16 mb-6"
             />
-            <h3 class="text-xl font-bold mb-4 text-[#1f2937]">UI Designer</h3>
+            <h3 class="text-xl font-bold mb-4 text-[#1f2937]">Java</h3>
             <p class="text-gray-600 leading-relaxed mb-4">
-              Crafting pixel-perfect UI designs that are both aesthetic and
-              highly functional for web and mobile platforms.
+              Building robust and scalable applications using Java's
+              object-oriented principles and platform independence.
             </p>
             <div class="flex items-center group">
               <a
@@ -280,9 +314,9 @@
             class="bg-white shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 p-6 cursor-pointer"
           >
             <img
-              src="./images/services-card1.png"
+              src="./images/Frontend-service.webp"
               alt="service-card3"
-              class="w-14 h-14 mb-6"
+              class="w-24 h-16 mb-6"
             />
             <h3 class="text-xl font-bold mb-4 text-[#1f2937]">
               Frontend Engineer
@@ -318,7 +352,11 @@
       </div>
 
       <!-- skills -->
-      <div class="relative bg-[#f8ad9d] text-white clip-tilted overflow-hidden">
+
+      <div
+        class="relative bg-[#f8ad9d] text-white clip-tilted overflow-hidden"
+        id="skills"
+      >
         <!-- Top SVG Shape -->
         <svg
           class="absolute top-0 left-0 w-full h-24"
@@ -328,10 +366,11 @@
           <polygon fill="#fde4dc" points="0,0 100,0 100,100" />
         </svg>
 
-        <!-- Main Content -->
+        <!-- Content -->
+
         <div class="relative z-10 px-6 py-20 max-w-6xl mx-auto">
           <div class="grid md:grid-cols-2 gap-12 items-center">
-            <!-- Left Content -->
+            <!-- Left part -->
             <div class="text-center md:text-left text-black">
               <h3
                 class="text-[3.5em] text-[#463f3a] font-extrabold mb-6 leading-tight"
@@ -355,11 +394,9 @@
               </ul>
             </div>
 
-            <!-- Right: Skills Grid -->
+            <!-- Right-part -->
 
-            
             <div class="relative grid grid-cols-3 gap-5 justify-items-center">
-              
               <!-- White Glowing Circle -->
               <div
                 class="absolute -z-10 w-72 h-72 bg-white rounded-full blur-3xl opacity-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -416,44 +453,9 @@
         </div>
       </div>
 
-      <style>
-        .clip-tilted {
-          clip-path: polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0% 100%);
-        }
-
-        @media (min-width: 768px) {
-          .clip-tilted {
-            clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0% 100%);
-          }
-        }
-
-        /* Floating Animation for Skill Logos */
-        @keyframes floatUp {
-          0% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-          100% {
-            transform: translateY(0);
-          }
-        }
-
-        .skill-logo {
-          animation: floatUp 3s ease-in-out infinite;
-          transition: transform 0.3s;
-          filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
-        }
-
-        .skill-logo:hover {
-          transform: translateY(-15px) scale(1.05);
-        }
-      </style>
-
       <!-- project-section -->
 
-      <div class="relative overflow-hidden bg-white mt-1.5">
+      <div class="relative overflow-hidden bg-white mt-1.5" id="projects">
         <!-- Top Tilt -->
 
         <div
@@ -574,55 +576,70 @@
         ></div>
       </div>
 
-      <!-- contact-us section -->
+      <!-- Contact Me -->
 
-      <div class="w-full bg-[#f8ad9d] mt-4" id="contactme">
-        <div class="container mx-auto px-4 pt-10">
-          <h1 class="text-[5em] text-[#dd4444] pt-8 font-bold">Contact me</h1>
-          <h3 class="text-3xl text-[#343d68aa] capitalize">
-            Questions, thoughts, or just want to say hello?
-          </h3>
+      <div id="contactme" class="relative bg-[#fde4dc] py-20 px-6 mt-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-6xl font-bold text-[#f06b6b]">Contact Me</h2>
+          </div>
 
-          <div class="mt-6 flex justify-center items-center">
-            <form class="flex flex-col gap-8 w-[70%] mx-20" action="#">
-              <div class="w-full">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Enter your name"
-                  class="w-full h-[42px] px-8 text-lg rounded shadow-md font-medium border-none mt-7"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Enter your email address"
-                  class="w-full h-[42px] px-8 text-lg rounded shadow-md font-medium border-none mt-7"
-                />
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="Enter your subject"
-                  class="w-full h-[42px] px-8 text-lg rounded shadow-md font-medium border-none mt-7"
-                />
-                <textarea
-                  name="message"
-                  cols="30"
-                  rows="10"
-                  placeholder="Enter your message"
-                  class="w-full px-8 pt-4 text-lg rounded shadow-md font-medium border-none mt-7"
-                ></textarea>
+          <div class="grid md:grid-cols-2 gap-10 items-center">
+            <!-- Left part -->
+
+            <div class="text-[#463f3a] space-y-6">
+              <h3 class="text-6xl text-[#343d68aa] capitalize">
+                Questions, thoughts, or just want to say hello?
+              </h3>
+
+              <p class="text-lg font-bold">
+                I'm open to opportunities, collaborations, or just a friendly
+                chat. Let's connect!
+              </p>
+
+              <div class="space-y-3 text-base font-semibold">
+                <p>
+                  <i class="fa-solid fa-envelope mr-2 text-[#f06b6b]"></i>
+                  akshitaparmar@gmail.com
+                </p>
+                <p>
+                  <i class="fa-solid fa-phone mr-2 text-[#f06b6b]"></i> +91
+                  9340240681
+                </p>
+                <p>
+                  <i class="fa-solid fa-location-dot mr-2 text-[#f06b6b]"></i>
+                  Indore, Madhya Pradesh
+                </p>
               </div>
+            </div>
 
-              <div>
-                <button
-                  type="submit"
-                  id="submit-btn"
-                  class="bg-[#343d68aa] text-white font-semibold px-6 py-3 rounded hover:scale-90 transition-transform duration-200 flex items-center"
-                >
-                  Send Message
-                  <i class="fa-solid fa-paper-plane ml-4 text-xl"></i>
-                </button>
-              </div>
+            <!-- Right Side -->
+
+            <form class="bg-white p-8 rounded-lg shadow-md space-y-6">
+              <input
+                type="text"
+                placeholder="Your Name"
+                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f06b6b]"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f06b6b]"
+                required
+              />
+              <textarea
+                rows="5"
+                placeholder="Your Message"
+                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f06b6b]"
+                required
+              ></textarea>
+              <button
+                type="submit"
+                class="bg-[#f06b6b] hover:bg-[#d94a4a] transition-all duration-300 text-white font-semibold px-6 py-3 rounded-md w-full"
+              >
+                Send Message
+              </button>
             </form>
           </div>
         </div>
