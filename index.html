@@ -12,11 +12,30 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+
+    <style>
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .skill-logo {
+        animation: floatUp 3s ease-in-out infinite;
+        transition: transform 0.3s;
+      }
+    </style>
   </head>
 
   <body class="overflow-x-hidden">
@@ -299,8 +318,8 @@
       </div>
 
       <!-- skills -->
-
       <div class="relative bg-[#f8ad9d] text-white clip-tilted overflow-hidden">
+        <!-- Top SVG Shape -->
         <svg
           class="absolute top-0 left-0 w-full h-24"
           viewBox="0 0 100 100"
@@ -309,43 +328,90 @@
           <polygon fill="#fde4dc" points="0,0 100,0 100,100" />
         </svg>
 
-        <!-- Content -->
-        <div class="relative z-10 px-6 py-20 text-center">
-          <h3 class="text-4xl font-bold mb-4">
-            My <span class="text-[#5e6472]">Skills</span>
-          </h3>
+        <!-- Main Content -->
+        <div class="relative z-10 px-6 py-20 max-w-6xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Left Content -->
+            <div class="text-center md:text-left text-black">
+              <h3
+                class="text-[3.5em] text-[#463f3a] font-extrabold mb-6 leading-tight"
+              >
+                My <span class="text-[#ffffffcc]">Skills</span>
+              </h3>
 
-          <p class="text-lg mb-12 max-w-2xl mx-auto text-black">
-            Tools & technologies I've been working with recently.
-          </p>
+              <p class="text-lg text-[#5e6472] mb-6 font-medium">
+                I'm constantly learning and improving. Here are some of the
+                technologies and tools I’ve worked with recently:
+              </p>
 
-          <div
-            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-5xl mx-auto font-semibold"
-          >
-            <img
-              src="./6_Portfolio_website_Images/html-1.png"
-              alt=""
-              loading="lazy"
-              class="skill-logo"
-            />
-            <img
-              src="./6_Portfolio_website_Images/html-1.png"
-              alt=""
-              loading="lazy"
-              class="skill-logo"
-            />
-            <img
-              src="./6_Portfolio_website_Images/html-1.png"
-              alt=""
-              loading="lazy"
-              class="skill-logo"
-            />
-            <img
-              src="./6_Portfolio_website_Images/html-1.png"
-              alt=""
-              loading="lazy"
-              class="skill-logo"
-            />
+              <ul
+                class="list-disc pl-5 space-y-2 text-base font-semibold text-[#463f3a]"
+              >
+                <li>Responsive Web Design with HTML5 & CSS3</li>
+                <li>Interactive UI using JavaScript & React.js</li>
+                <li>Modern styling with Tailwind CSS & Bootstrap</li>
+                <li>Version control with Git & GitHub</li>
+                <li>Basic backend integration with Java</li>
+              </ul>
+            </div>
+
+            <!-- Right: Skills Grid -->
+
+            
+            <div class="relative grid grid-cols-3 gap-5 justify-items-center">
+              
+              <!-- White Glowing Circle -->
+              <div
+                class="absolute -z-10 w-72 h-72 bg-white rounded-full blur-3xl opacity-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              ></div>
+
+              <!-- Skill Icons -->
+              <img
+                src="./images/html-1.png"
+                alt="HTML"
+                class="skill-logo w-14 md:w-20"
+              />
+              <img
+                src="./images/css.png"
+                alt="CSS"
+                class="skill-logo w-14 md:w-20"
+              />
+              <img
+                src="./images/javascript-1.webp"
+                alt="JavaScript"
+                class="skill-logo w-16 md:w-20"
+              />
+              <img
+                src="./images/java.png"
+                alt="Java"
+                class="skill-logo w-16 md:w-20"
+              />
+              <img
+                src="./images/react.png"
+                alt="React"
+                class="skill-logo w-16 md:w-20"
+              />
+              <img
+                src="./images/Bootstrap.png"
+                alt="Bootstrap"
+                class="skill-logo w-16 md:w-20"
+              />
+              <img
+                src="./images/git.png"
+                alt="Git"
+                class="skill-logo w-16 md:w-20"
+              />
+              <img
+                src="./images/github.png"
+                alt="GitHub"
+                class="skill-logo w-16 md:w-20"
+              />
+              <img
+                src="./images/tailwind.png"
+                alt="Tailwind"
+                class="skill-logo w-16 md:w-20"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -359,6 +425,29 @@
           .clip-tilted {
             clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0% 100%);
           }
+        }
+
+        /* Floating Animation for Skill Logos */
+        @keyframes floatUp {
+          0% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+
+        .skill-logo {
+          animation: floatUp 3s ease-in-out infinite;
+          transition: transform 0.3s;
+          filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
+        }
+
+        .skill-logo:hover {
+          transform: translateY(-15px) scale(1.05);
         }
       </style>
 
@@ -481,8 +570,62 @@
 
         <!-- Bottom Tilt -->
         <div
-          class="absolute bottom-0 left-0 w-full h-32 bg-white transform skew-y-6 origin-bottom-left z-20"
+          class="absolute bottom-0 left-0 w-full h-32 pb-32 bg-white transform skew-y-6 origin-bottom-left z-20"
         ></div>
+      </div>
+
+      <!-- contact-us section -->
+
+      <div class="w-full bg-[#f8ad9d] mt-4" id="contactme">
+        <div class="container mx-auto px-4 pt-10">
+          <h1 class="text-[5em] text-[#dd4444] pt-8 font-bold">Contact me</h1>
+          <h3 class="text-3xl text-[#343d68aa] capitalize">
+            Questions, thoughts, or just want to say hello?
+          </h3>
+
+          <div class="mt-6 flex justify-center items-center">
+            <form class="flex flex-col gap-8 w-[70%] mx-20" action="#">
+              <div class="w-full">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  class="w-full h-[42px] px-8 text-lg rounded shadow-md font-medium border-none mt-7"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email address"
+                  class="w-full h-[42px] px-8 text-lg rounded shadow-md font-medium border-none mt-7"
+                />
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Enter your subject"
+                  class="w-full h-[42px] px-8 text-lg rounded shadow-md font-medium border-none mt-7"
+                />
+                <textarea
+                  name="message"
+                  cols="30"
+                  rows="10"
+                  placeholder="Enter your message"
+                  class="w-full px-8 pt-4 text-lg rounded shadow-md font-medium border-none mt-7"
+                ></textarea>
+              </div>
+
+              <div>
+                <button
+                  type="submit"
+                  id="submit-btn"
+                  class="bg-[#343d68aa] text-white font-semibold px-6 py-3 rounded hover:scale-90 transition-transform duration-200 flex items-center"
+                >
+                  Send Message
+                  <i class="fa-solid fa-paper-plane ml-4 text-xl"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
 
